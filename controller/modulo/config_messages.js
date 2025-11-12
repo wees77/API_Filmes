@@ -22,6 +22,7 @@ const DEFAULT_HEADER = {development: "Weslei Santos",
 const SUCCESS_REQUEST       = {status: true, status_code: 200, message: "Requisição realizada com sucesso!"}
 const SUCCESS_CREATED_ITEM  = {status: true, status_code: 201, message: "Item criado com sucesso!"}
 const SUCCESS_UPDATE_ITEM   = {status: true, status_code: 200, message: "Item atualizado com sucesso!"}
+const SUCCESS_DELETE_ITEM    = {status: true, status_code: 200, message: "Item excluído com sucesso!"}
 
 /********************************* MENSAGENS DE ERRO *********************************************/
 const ERROR_NOT_FOUND                    = {status: false, status_code: 404, message: "Nenhum registro encontrado!"}
@@ -29,6 +30,7 @@ const ERROR_INTERNAL_SERVER_CONTROLLER   = {status: false, status_code: 500, mes
 const ERROR_INTERNAL_SERVER_MODEL        = {status: false, status_code: 500, message: "Impossível processar a requisição, erro interno no model!"}
 const ERROR_REQUIRED_FIELDS              = {status: false, status_code: 400, message: "Impossível completar a requisição, existem campos obrigatórios que não foram preenchidos ou estão inválidos!"}
 const ERROR_CONTENT_TYPE                 = {status: false, status_code: 415, message: "Não foi possível completar a requisição, pois o tipo de dado enviado no corpo deve ser Json"}
+const ERROR_RELATIONAL_INSERTION         = {status: false, status_code: 500, message: "A requisição do item principal foi processada com sucesso, porém houveram problemas ao inserir dados na tabela de relação!"}
 
 module.exports = {
     DEFAULT_HEADER,
@@ -39,5 +41,7 @@ module.exports = {
     ERROR_REQUIRED_FIELDS,
     SUCCESS_CREATED_ITEM,
     ERROR_CONTENT_TYPE,
-    SUCCESS_UPDATE_ITEM
+    SUCCESS_UPDATE_ITEM,
+    SUCCESS_DELETE_ITEM,
+    ERROR_RELATIONAL_INSERTION
 }

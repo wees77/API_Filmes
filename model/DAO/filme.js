@@ -41,7 +41,7 @@ const getSelectAllMovies = async function () {
 
         // Encaminha para o BD o script SQL
         let result = await prisma.$queryRawUnsafe(sql)
-
+       
         if (Array.isArray(result))
             return result
         else
@@ -70,6 +70,26 @@ const getSelectByIdMovies = async function (id) {
         return false
     }
 
+}
+
+// Retorna o último id inserido no banco de dados
+const getSelectLastId = async function () {
+    try {
+        // Script sql para retornar apenas o último id do BD
+        let sql = `select id from tbl_filme order by id desc limit 1`
+
+        // Encaminha para o BD o script SQL
+        let result = await prisma.$queryRawUnsafe(sql)
+
+        if(Array.isArray(result))
+            return Number(result[0].id)
+        else
+            return false
+
+        
+    } catch (error) {
+        return false
+    }
 }
 
 // Insere um novo filme no banco de dados
@@ -121,36 +141,31 @@ const setUpdateMovies = async function (filme) {
 
         // $executeRawUnsafe() -> Permite executar um script SQL de uma variável e que NÃO retorna valores do BD (INSERT, UPDATE, DELETE)
         let result = await prisma.$executeRawUnsafe(sql)
-
+        
         if(result)
             return true
+        
         else
             return false    
 
     } catch (error) {
         return false
     }
+    
 
 }
 
-// Deleta um filme no banco de dados
+// Exclui um filme pelo ID
 const setDeleteMovies = async function (id) {
     try {
-        // Script SQL
-        let sql = `delete from tbl_filme where id = ${id}`
+        let sql = `DELETE FROM tbl_filme WHERE id = ${id}`
+        let result = await prisma.$executeRawUnsafe(sql)
 
-        // Encaminha para o BD o script SQL
-        let result = await prisma.$queryRawUnsafe(sql)
-
-        if (Array.isArray(result))
-            return result
-        else
-            return false
-
+        // result indica quantas linhas foram afetadas
+        return result > 0 ? true : false
     } catch (error) {
         return false
     }
-
 }
 
 
@@ -159,5 +174,6 @@ module.exports = {
     getSelectByIdMovies,
     setInsertMovies,
     setUpdateMovies,
-    setDeleteMovies
+    setDeleteMovies,
+    getSelectLastId
 }
