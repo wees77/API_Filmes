@@ -22,12 +22,14 @@ const filmeRoutes = require('./routes/filmeRoutes');
 const generoRoutes = require('./routes/generoRoutes');
 const paisOrigemRoutes = require('./routes/pais_origemRoutes');
 const classificacaoRoutes = require('./routes/classificacaoRoutes');
+const atorRoutes = require('./routes/atorRoutes');  
 
 // Usa as rotas
 app.use(filmeRoutes);
 app.use(generoRoutes);
 app.use(paisOrigemRoutes);
 app.use(classificacaoRoutes);
+app.use(atorRoutes);
 
 // Define a porta
 const PORT = process.env.PORT || 8080;

@@ -6,6 +6,7 @@
  * Data: 27/10/2025
  * Versão: 1.1 (CRUD do filme com relacionamento com a tabela gênero)
 *****************************************************************************************************/
+
 // Import da model do DAO do filme
 const filmeDAO = require('../../model/DAO/filme.js')
 

@@ -159,7 +159,7 @@ const excluirClassificacao = async function (id) {
 
     try {
         if (!isNaN(id) && id > 0) {
-            let validarID = await buscarClassificacaoPorId(id)
+            let validarID = await validarDadosClassificacao(id)
 
             if (validarID.status_code === MESSAGES.SUCCESS_REQUEST.status_code) {
                 let resultDelete = await classificacaoDAO.setDeleteClassification(Number(id))

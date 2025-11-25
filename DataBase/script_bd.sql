@@ -92,6 +92,23 @@ CREATE TABLE tbl_filme_genero (
     references			tbl_genero(id)
 );
 
+-- TABELA DE ATORES --
+CREATE TABLE tbl_ator (
+	id				int PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    nome			varchar(100) NOT NULL,
+    data_nascimento date NOT NULL,
+    descricao		varchar(500) NULL,
+    foto			varchar(200) NULL
+);
+
+INSERT into tbl_ator ( nome, data_nascimento,
+						descricao, foto)
+						values ("Brendan James Fraser", "1968-12-03", 
+                        "Brendan James Fraser é um ator norte-americano, tendo também a nacionalidade canadense, é conhecido por estrelar diversos filmes de sucesso de aventura e comédia, como A Múmia, George - O Rei da Floresta e Viagem ao Centro da Terra.", 
+                        "https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcSakpuEYw1PMc5nb2EtkYV9qkHEtYrDCLmw_8fK1-S2foEZiFmiYPq4aCzehAspYnWSk1X2j1QH7x2YKyU");
+
+select * from tbl_atores;
 select * from tbl_filme;
 select * from tbl_filme_genero;
-desc tbl_genero;
+
+DELETE FROM tbl_filme WHERE id = 30;
