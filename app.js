@@ -4,6 +4,7 @@
  * Autor: Weslei Santos
  * Versão: 2.0
 *****************************************************************************************************/
+<<<<<<< HEAD
 require('dotenv').config();
 
 const express = require('express');
@@ -16,6 +17,13 @@ const app = express();
 // Middleware JSON
 app.use(express.json());
 
+=======
+
+const express = require('express');
+const cors = require('cors');
+const app = express();
+
+>>>>>>> 1857e8ed580f77809b0ec6f41a3a69922e4c2175
 // Configuração do CORS
 app.use((request, response, next) => {
     response.header('Access-Control-Allow-Origin', '*');
@@ -24,9 +32,12 @@ app.use((request, response, next) => {
     next();
 });
 
+<<<<<<< HEAD
 // Swagger
 app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
+=======
+>>>>>>> 1857e8ed580f77809b0ec6f41a3a69922e4c2175
 // Importa as rotas
 const filmeRoutes = require('./routes/filmeRoutes');
 const generoRoutes = require('./routes/generoRoutes');
@@ -41,6 +52,7 @@ app.use(paisOrigemRoutes);
 app.use(classificacaoRoutes);
 app.use(atorRoutes);
 
+<<<<<<< HEAD
 // Porta
 const PORT = process.env.PORT || 8080;
 
@@ -50,4 +62,13 @@ app.listen(PORT, () => {
     console.log(`Swagger disponível em http://localhost:${PORT}/swagger`);
 });
 
+=======
+// Define a porta
+const PORT = process.env.PORT || 8080;
+
+// Inicializa o servidor
+app.listen(PORT, function(){
+    console.log('API aguardando Requisições !!!')
+})
+>>>>>>> 1857e8ed580f77809b0ec6f41a3a69922e4c2175
 

@@ -23,10 +23,17 @@
 */
 
 // Import da dependência do Prisma que permite a execução de script SQL no BD
+<<<<<<< HEAD
 const { PrismaClient } = require('../../generated/prisma');
 
 // Cria um novo objeto baseado na classe do PrismaClient
 const prisma = new PrismaClient();
+=======
+const { PrismaClient } = require('../../generated/prisma')
+
+// Cria um novo objeto baseado na classe do PrismaClient
+const prisma = new PrismaClient()
+>>>>>>> 1857e8ed580f77809b0ec6f41a3a69922e4c2175
 
 // $queryRawUnsafe() ->  Permite executar um script SQL de uma variável e que retorna valores do BD (SELECT)
 // $executeRawUnsafe() -> Permite executar um script SQL de uma variável e que NÃO retorna valores do BD (INSERT, UPDATE, DELETE)
@@ -176,5 +183,9 @@ module.exports = {
     setUpdateMovies,
     setDeleteMovies,
     getSelectLastId
+<<<<<<< HEAD
 }
 
+=======
+}
+>>>>>>> 1857e8ed580f77809b0ec6f41a3a69922e4c2175

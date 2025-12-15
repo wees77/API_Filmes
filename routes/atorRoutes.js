@@ -13,6 +13,7 @@ const controllerAtor = require('../controller/ator/controller_ator');
 
 const bodyParserJSON = bodyParser.json();
 
+<<<<<<< HEAD
 /**
  * @swagger
  * tags:
@@ -31,11 +32,15 @@ const bodyParserJSON = bodyParser.json();
  *       200:
  *         description: Lista de atores retornada com sucesso
  */
+=======
+// 1° EndPoints para listar classificações
+>>>>>>> 1857e8ed580f77809b0ec6f41a3a69922e4c2175
 router.get('/v1/locadora/atores', cors(), async (request, response) => {
     let atores = await controllerAtor.listarAtores();
     response.status(atores.status_code).json(atores);
 });
 
+<<<<<<< HEAD
 /**
  * @swagger
  * /v1/locadora/ator/{id}:
@@ -54,12 +59,16 @@ router.get('/v1/locadora/atores', cors(), async (request, response) => {
  *       404:
  *         description: Ator não encontrado
  */
+=======
+// 2° EndPoint: buscar ator por ID
+>>>>>>> 1857e8ed580f77809b0ec6f41a3a69922e4c2175
 router.get('/v1/locadora/ator/:id', cors(), async (request, response) => {
     let id = request.params.id;
     let ator = await controllerAtor.buscarAtorPorId(id);
     response.status(ator.status_code).json(ator);
 });
 
+<<<<<<< HEAD
 /**
  * @swagger
  * /v1/locadora/ator:
@@ -84,6 +93,9 @@ router.get('/v1/locadora/ator/:id', cors(), async (request, response) => {
  *       400:
  *         description: Dados inválidos
  */
+=======
+// 3° EndPoints para inserir novo ator
+>>>>>>> 1857e8ed580f77809b0ec6f41a3a69922e4c2175
 router.post('/v1/locadora/ator', cors(), bodyParserJSON, async (request, response) => {
     let dadosBody = request.body;
     let contentType = request.headers['content-type'];
@@ -91,6 +103,7 @@ router.post('/v1/locadora/ator', cors(), bodyParserJSON, async (request, respons
     response.status(ator.status_code).json(ator);
 });
 
+<<<<<<< HEAD
 /**
  * @swagger
  * /v1/locadora/ator/{id}:
@@ -118,6 +131,9 @@ router.post('/v1/locadora/ator', cors(), bodyParserJSON, async (request, respons
  *       404:
  *         description: Ator não encontrado
  */
+=======
+// 4° EndPoints para atualizar ator
+>>>>>>> 1857e8ed580f77809b0ec6f41a3a69922e4c2175
 router.put('/v1/locadora/ator/:id', cors(), bodyParserJSON, async (request, response) => {
     let idAtor = request.params.id;
     let dadosBody = request.body;

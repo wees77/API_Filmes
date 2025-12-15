@@ -1,5 +1,9 @@
 /*******************************************************************************************************************************************************************
+<<<<<<< HEAD
  * Objetivo: Arquivo responsável pela criação dos endpoints do CRUD de classificação indicativa de filmes
+=======
+ * Objetivo: Arquivo responsável pela criação dos endpoints do CRUD de classificacao indicativa de filmes
+>>>>>>> 1857e8ed580f77809b0ec6f41a3a69922e4c2175
  * Data: 04/11/2025
  * Autor: Weslei Santos
  * Versão: 1.0
@@ -13,6 +17,7 @@ const controllerClassificacao = require('../controller/classificacao/controller_
 
 const bodyParserJSON = bodyParser.json();
 
+<<<<<<< HEAD
 /**
  * @swagger
  * tags:
@@ -30,11 +35,15 @@ const bodyParserJSON = bodyParser.json();
  *       200:
  *         description: Lista de classificações retornada com sucesso
  */
+=======
+// 1° EndPoints para listar classificações
+>>>>>>> 1857e8ed580f77809b0ec6f41a3a69922e4c2175
 router.get('/v1/locadora/classificacao', cors(), async (request, response) => {
     let classificacao = await controllerClassificacao.listarClassificacoes();
     response.status(classificacao.status_code).json(classificacao);
 });
 
+<<<<<<< HEAD
 /**
  * @swagger
  * /v1/locadora/classificacao/{id}:
@@ -55,10 +64,17 @@ router.get('/v1/locadora/classificacao', cors(), async (request, response) => {
  */
 router.get('/v1/locadora/classificacao/:id', cors(), async (request, response) => {
     let id = request.params.id;
+=======
+// 2° EndPoint: buscar classificação por ID
+router.get('/v1/locadora/classificacao/:id', cors(), async (request, response) => {
+    let id = request.params.id;
+    console.log('[GET] Rota buscarClassificacaoId acessada!');
+>>>>>>> 1857e8ed580f77809b0ec6f41a3a69922e4c2175
     let classificacao = await controllerClassificacao.buscarClassificacaoPorId(id);
     response.status(classificacao.status_code).json(classificacao);
 });
 
+<<<<<<< HEAD
 /**
  * @swagger
  * /v1/locadora/classificacao:
@@ -84,6 +100,9 @@ router.get('/v1/locadora/classificacao/:id', cors(), async (request, response) =
  *       400:
  *         description: Dados inválidos
  */
+=======
+// 3° EndPoints para inserir nova classificação
+>>>>>>> 1857e8ed580f77809b0ec6f41a3a69922e4c2175
 router.post('/v1/locadora/classificacao', cors(), bodyParserJSON, async (request, response) => {
     let dadosBody = request.body;
     let contentType = request.headers['content-type'];
@@ -91,6 +110,7 @@ router.post('/v1/locadora/classificacao', cors(), bodyParserJSON, async (request
     response.status(classificacao.status_code).json(classificacao);
 });
 
+<<<<<<< HEAD
 /**
  * @swagger
  * /v1/locadora/classificacao/{id}:
@@ -120,6 +140,9 @@ router.post('/v1/locadora/classificacao', cors(), bodyParserJSON, async (request
  *       404:
  *         description: Classificação não encontrada
  */
+=======
+// 4° EndPoints para atualizar classificação
+>>>>>>> 1857e8ed580f77809b0ec6f41a3a69922e4c2175
 router.put('/v1/locadora/classificacao/:id', cors(), bodyParserJSON, async (request, response) => {
     let idClassificacao = request.params.id;
     let dadosBody = request.body;
@@ -128,6 +151,7 @@ router.put('/v1/locadora/classificacao/:id', cors(), bodyParserJSON, async (requ
     response.status(classificacao.status_code).json(classificacao);
 });
 
+<<<<<<< HEAD
 /**
  * @swagger
  * /v1/locadora/classificacao/{id}:
@@ -146,10 +170,17 @@ router.put('/v1/locadora/classificacao/:id', cors(), bodyParserJSON, async (requ
  *       404:
  *         description: Classificação não encontrada
  */
+=======
+// 5° EndPoints para excluir classificação
+>>>>>>> 1857e8ed580f77809b0ec6f41a3a69922e4c2175
 router.delete('/v1/locadora/classificacao/:id', cors(), async (request, response) => {
     let idClassificacao = request.params.id;
     let classificacao = await controllerClassificacao.excluirClassificacao(idClassificacao);
     response.status(classificacao.status_code).json(classificacao);
 });
 
+<<<<<<< HEAD
 module.exports = router;
+=======
+module.exports = router;
+>>>>>>> 1857e8ed580f77809b0ec6f41a3a69922e4c2175

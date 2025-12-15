@@ -1,5 +1,6 @@
 {
   "dependencies": {
+<<<<<<< HEAD
     "@prisma/client": "^6.19.1",
     "body-parser": "^2.2.0",
     "cors": "^2.8.5",
@@ -18,4 +19,12 @@
   "keywords": [],
   "author": "",
   "license": "ISC"
+=======
+    "@prisma/client": "^6.16.3",
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "prisma": "^6.16.3"
+  }
+>>>>>>> 1857e8ed580f77809b0ec6f41a3a69922e4c2175
 }

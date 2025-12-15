@@ -13,6 +13,7 @@ const controllerGenero = require('../controller/genero/controller_genero');
 
 const bodyParserJSON = bodyParser.json();
 
+<<<<<<< HEAD
 /**
  * @swagger
  * tags:
@@ -30,11 +31,15 @@ const bodyParserJSON = bodyParser.json();
  *       200:
  *         description: Lista de gêneros retornada com sucesso
  */
+=======
+// 1° EndPoints para listar gêneros
+>>>>>>> 1857e8ed580f77809b0ec6f41a3a69922e4c2175
 router.get('/v1/locadora/genero', cors(), async (request, response) => {
     let genero = await controllerGenero.listarGeneros();
     response.status(genero.status_code).json(genero);
 });
 
+<<<<<<< HEAD
 /**
  * @swagger
  * /v1/locadora/genero/{id}:
@@ -53,12 +58,16 @@ router.get('/v1/locadora/genero', cors(), async (request, response) => {
  *       404:
  *         description: Gênero não encontrado
  */
+=======
+// 2° EndPoints para buscar gênero por ID
+>>>>>>> 1857e8ed580f77809b0ec6f41a3a69922e4c2175
 router.get('/v1/locadora/genero/:id', cors(), async (request, response) => {
     let id = request.params.id;
     let genero = await controllerGenero.buscarGeneroID(id);
     response.status(genero.status_code).json(genero);
 });
 
+<<<<<<< HEAD
 /**
  * @swagger
  * /v1/locadora/genero:
@@ -81,6 +90,9 @@ router.get('/v1/locadora/genero/:id', cors(), async (request, response) => {
  *       400:
  *         description: Dados inválidos
  */
+=======
+// 3° EndPoints para inserir novo gênero
+>>>>>>> 1857e8ed580f77809b0ec6f41a3a69922e4c2175
 router.post('/v1/locadora/genero', cors(), bodyParserJSON, async (request, response) => {
     let dadosBody = request.body;
     let contentType = request.headers['content-type'];
@@ -88,6 +100,7 @@ router.post('/v1/locadora/genero', cors(), bodyParserJSON, async (request, respo
     response.status(genero.status_code).json(genero);
 });
 
+<<<<<<< HEAD
 /**
  * @swagger
  * /v1/locadora/genero/{id}:
@@ -115,6 +128,9 @@ router.post('/v1/locadora/genero', cors(), bodyParserJSON, async (request, respo
  *       404:
  *         description: Gênero não encontrado
  */
+=======
+// 4° EndPoints para atualizar gênero
+>>>>>>> 1857e8ed580f77809b0ec6f41a3a69922e4c2175
 router.put('/v1/locadora/genero/:id', cors(), bodyParserJSON, async (request, response) => {
     let idGenero = request.params.id;
     let dadosBody = request.body;
@@ -123,6 +139,7 @@ router.put('/v1/locadora/genero/:id', cors(), bodyParserJSON, async (request, re
     response.status(genero.status_code).json(genero);
 });
 
+<<<<<<< HEAD
 /**
  * @swagger
  * /v1/locadora/genero/{id}:
@@ -141,10 +158,19 @@ router.put('/v1/locadora/genero/:id', cors(), bodyParserJSON, async (request, re
  *       404:
  *         description: Gênero não encontrado
  */
+=======
+// 5° EndPoints para excluir gênero
+>>>>>>> 1857e8ed580f77809b0ec6f41a3a69922e4c2175
 router.delete('/v1/locadora/genero/:id', cors(), async (request, response) => {
     let idGenero = request.params.id;
     let genero = await controllerGenero.excluirGenero(idGenero);
     response.status(genero.status_code).json(genero);
+<<<<<<< HEAD
 });
 
 module.exports = router;
+=======
+})
+
+module.exports = router;
+>>>>>>> 1857e8ed580f77809b0ec6f41a3a69922e4c2175

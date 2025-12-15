@@ -13,6 +13,7 @@ const controllerFilme = require('../controller/filme/controller_filme');
 
 const bodyParserJSON = bodyParser.json();
 
+<<<<<<< HEAD
 /**
  * @swagger
  * tags:
@@ -30,11 +31,15 @@ const bodyParserJSON = bodyParser.json();
  *       200:
  *         description: Lista de filmes retornada com sucesso
  */
+=======
+// 1° EndPoints para listar filmes
+>>>>>>> 1857e8ed580f77809b0ec6f41a3a69922e4c2175
 router.get('/v1/locadora/filme', cors(), async (request, response) => {
     let filme = await controllerFilme.listarFilmes();
     response.status(filme.status_code).json(filme);
 });
 
+<<<<<<< HEAD
 /**
  * @swagger
  * /v1/locadora/filme/{id}:
@@ -53,12 +58,16 @@ router.get('/v1/locadora/filme', cors(), async (request, response) => {
  *       404:
  *         description: Filme não encontrado
  */
+=======
+// 2° EndPoints para buscar filme por ID
+>>>>>>> 1857e8ed580f77809b0ec6f41a3a69922e4c2175
 router.get('/v1/locadora/filme/:id', cors(), async (request, response) => {
     let id = request.params.id;
     let filme = await controllerFilme.buscarFilmeID(id);
     response.status(filme.status_code).json(filme);
 });
 
+<<<<<<< HEAD
 /**
  * @swagger
  * /v1/locadora/filme:
@@ -91,6 +100,9 @@ router.get('/v1/locadora/filme/:id', cors(), async (request, response) => {
  *       400:
  *         description: Dados inválidos
  */
+=======
+// 3° EndPoints para inserir novo filme
+>>>>>>> 1857e8ed580f77809b0ec6f41a3a69922e4c2175
 router.post('/v1/locadora/filme', cors(), bodyParserJSON, async (request, response) => {
     let dadosBody = request.body;
     let contentType = request.headers['content-type'];
@@ -98,6 +110,7 @@ router.post('/v1/locadora/filme', cors(), bodyParserJSON, async (request, respon
     response.status(filme.status_code).json(filme);
 });
 
+<<<<<<< HEAD
 /**
  * @swagger
  * /v1/locadora/filme/{id}:
@@ -131,6 +144,9 @@ router.post('/v1/locadora/filme', cors(), bodyParserJSON, async (request, respon
  *       404:
  *         description: Filme não encontrado
  */
+=======
+// 4° EndPoints para atualizar filme
+>>>>>>> 1857e8ed580f77809b0ec6f41a3a69922e4c2175
 router.put('/v1/locadora/filme/:id', cors(), bodyParserJSON, async (request, response) => {
     let idFilme = request.params.id;
     let dadosBody = request.body;
@@ -139,6 +155,7 @@ router.put('/v1/locadora/filme/:id', cors(), bodyParserJSON, async (request, res
     response.status(filme.status_code).json(filme);
 });
 
+<<<<<<< HEAD
 /**
  * @swagger
  * /v1/locadora/filme/{id}:
@@ -157,6 +174,9 @@ router.put('/v1/locadora/filme/:id', cors(), bodyParserJSON, async (request, res
  *       404:
  *         description: Filme não encontrado
  */
+=======
+// 5° EndPoints para excluir filme
+>>>>>>> 1857e8ed580f77809b0ec6f41a3a69922e4c2175
 router.delete('/v1/locadora/filme/:id', cors(), async (request, response) => {
     let idFilme = request.params.id;
     let filme = await controllerFilme.excluirFilme(idFilme);
@@ -164,4 +184,7 @@ router.delete('/v1/locadora/filme/:id', cors(), async (request, response) => {
 });
 
 module.exports = router;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1857e8ed580f77809b0ec6f41a3a69922e4c2175
